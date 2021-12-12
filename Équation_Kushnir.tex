@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage{xfrac}
+\usepackage{stackengine}
+
+
+\begin{document}
+
+
+%=========================================================
+% Physic Equation
+% Energy conservation Equation
+
+Energy Conservation 
+\begin{equation} V\rho c_v \frac{dT}{dt} =F_i \dot{m}_c \left( h_i - h + \textbf{ZR}T - \rho\frac{\partial u}{\partial \rho}\bigg|_{T}\right) + F_e \dot{m}_c \left( \textbf{ZR}T - \rho\frac{\partial u}{\partial \rho}\bigg|_{T}\right) + \dot{Q}  \end{equation} 
+
+% Mass conservation
+Mass Conservation \begin{equation} V \frac{d\rho}{dt} = \left(F_i+F_e \right) \dot{m}_c \end{equation}
+
+% Gas Law
+Gas Law \begin{equation} p=\textbf{Z}\rho \textbf{R}T \end{equation}
+
+% Convection
+Convection \begin{equation} \dot{Q} = h_cA_c \left(T_{Rw} -T \right) \end{equation}
+
+% Conduction
+Conduction \begin{equation} \rho c_{pR}\frac{dT_R}{dt}= \frac{1}{r} \frac{\partial}{\partial r}\left(k_Rr \frac{\partial T_R}{\partial r} \right)  \end{equation}
+
+%=========================================================
+%  Kushnir Model
+
+% (17) Ration and small term
+$$ T^* = \frac{T}{T_0},   T_R^*=\frac{T_R}{T_0}, T_i^* =\frac{T_i}{T_0}, p^* = \frac{p}{p_0}, \rho^* = \frac{\rho}{\rho_0},  t^* = \frac{t}{t_0}, r^* = \frac{r}{r_0} $$
+
+$$ m_r=\frac{\dot{m}_ct_1}{\rho_0 V}, \gamma = \frac{c_{p0}}{c_{v0}},  R^*= \frac{\textbf{R}Z_0}{c_{v0}}, U_{\rho^*}^* = \frac{\textbf{R}T_0Z_{T0}}{c_{v0}} $$
+
+$$ q_r = \frac{h_cA_c}{c_{v0}\dot{m}_c}, Fo = \frac{\alpha_Rt_p}{R_W^2}, Bi = \frac{h_cR_W}{k_R},
+Bi¨* = \frac{h_ct_p^*{\frac{1}{2}}}{e_R}$$
+
+% (18) Eta
+\begin{equation}\eta  = 1 -   \frac  {\ln\left[\sfrac{\left(\beta+1-\frac{r^*-1}{R_p^*-1}\right)}{\left(\beta-1+\frac{r^*-1}{R_p^*-1}\right)}\right]} 
+  {\ln\left({\frac{\beta+1}{\beta-1}}\right)}\end{equation}
+
+% Eta first derivative
+
+
+% (19) Partial Derivative Temp/time
+\begin{equation} \frac{\partial T_R^*}{\partial t^* } = Fo \left[ \eta ^{'2} \frac{\partial^2 T_R^*}{\partial \eta^2} +
+ \left(\eta^{''}+ \frac{\eta^{'}}{r^*} \right) \frac{\partial T_R^*}{\partial \eta } \right] \end{equation}
+
+% (24) Rj
+\begin{equation} r_j^* = 1+ \left(R_p^*-1 \right)  \frac{\beta+1-(\beta-1) \left( \frac{\beta+1}{\beta-1}\right)^{1-\eta_j}}{1+\left( \frac{\beta+1}{\beta-1}\right)^{1-\eta_j}}  \end{equation}
+
+% (25) and (26) Boundry grid point Equation [dy/dt]
+\begin{equation} \frac{\partial T_{R0}^*}{\partial t^*} = Fo\left[2\eta^{'2}\frac{T_{R1}^*-T_{R0}^*}{\Delta\eta^2}+Bi\left(\frac{\eta^{''}}{\eta^{'}}+ \frac{1}{r^*}-\frac{2\eta^{'}}{\Delta\eta} \right) \left(T_{R0}^* -T^*\right) \right]\end{equation}
+ 
+\begin{equation} \frac{\partial T_{RN}^*}{\partial t^*} = Fo\left[2\eta^{'2}\frac{T_{RN-1}^*-T_{RN}^*}{\Delta\eta^2}  \right] \end{equation}
+
+
+
+\end{document}
+
